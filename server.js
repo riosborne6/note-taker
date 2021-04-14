@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
-const PORT = 3005;
+const PORT = process.env.PORT || 3005;
 const app = express();
 
 app.use(express.json());
@@ -46,5 +46,5 @@ app.post('/api/notes', (req, res) => {
 // });
 
 app.listen(PORT, function () {
-  console.log("rLIstening on " + PORT);
+  console.log("rLIstening on" + '${PORT}!');
 });
